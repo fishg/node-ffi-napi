@@ -39,10 +39,12 @@
     "nyc": "^15.0.0",
     "prebuildify": "^4.0.0",
     "prebuildify-ci": "^1.0.5",
-    "ref-array-di": "^1.2.1"
+    "ref-array-di": "^1.2.1",
+    "del-cli": "^3.0.1"
   },
   "scripts": {
     "install": "node-gyp-build",
+    "postinstall": "del-cli -f build",
     "prebuild": "prebuildify --napi --tag-armv --tag-uv",
     "prepack": "([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))",
     "prepack-bak": "prebuildify-ci download && ([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))",
