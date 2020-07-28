@@ -43,7 +43,8 @@
     "ref-array-di": "^1.2.1"
   },
   "scripts": {
-    "install": "node-gyp-build",
+    "install": "echo 'ok'",
+    "install-bak": "node-gyp-build",
     "postinstall": "del-cli -f build",
     "prebuild": "prebuildify --napi --tag-armv --tag-uv",
     "prepack": "([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))",
