@@ -31,8 +31,7 @@
     "node-addon-api": "^2.0.0",
     "node-gyp-build": "^4.2.1",
     "ref-napi": "git+https://code.aliyun.com/youme-sdk/ref-napi.git",
-    "ref-struct-di": "^1.1.0",
-    "del-cli": "^3.0.1"
+    "ref-struct-di": "^1.1.0"
   },
   "devDependencies": {
     "fs-extra": "^9.0.0",
@@ -45,7 +44,6 @@
   "scripts": {
     "install": "echo 'ok'",
     "install-bak": "node-gyp-build",
-    "postinstall": "del-cli -f build",
     "prebuild": "prebuildify --napi --tag-armv --tag-uv",
     "prepack": "([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))",
     "prepack-bak": "prebuildify-ci download && ([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))",
